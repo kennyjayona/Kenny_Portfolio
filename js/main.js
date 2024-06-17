@@ -30,6 +30,14 @@ $(window).on('load', function() {
 	});
 });
 
+function downloadResume() {
+    const link = document.createElement('a');
+    link.href = 'Jayona,.Kenny.SDTP.resume.pdf';  // Ensure this path is correct
+    link.download = 'Jayona,.Kenny.SDTP.resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
 
 (function($){

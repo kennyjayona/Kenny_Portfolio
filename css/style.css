@@ -30,6 +30,11 @@ li, ul {
 	padding: 0;
 }
 
+/* ill,brand,fs */
+
+
+
+
 
 
 /* ====================
@@ -501,10 +506,13 @@ li, ul {
 .isotope_items {
 	margin-bottom: -30px;
 }
+
 .work-item {
 	position: relative;
 	display: block;
 	margin-bottom: 30px;
+	width: 350px;
+	height: 150px;
 }
 .work-item img {
 	min-width: 100%;
@@ -733,46 +741,60 @@ li, ul {
   Footer Section
 =======================*/
 .footer-section {
-	position: fixed;
-	width: 100%;
-	bottom: 0;
-	background: url("../img/p-dark.png");
-	text-align: center;
-	padding: 70px 0;
-	z-index: 2;
+    position:static;
+    width: 100%;
+   
+    background-color: #333; /* Dark background color */
+    text-align: center;
+    padding: 20px 0; /* Padding adjustment */
+    z-index: 1000; /* Ensure it's above other content */
+    transition: bottom 0.3s ease; /* Smooth transition effect */
 }
+
+
 .footer-section .social-links {
-	margin-bottom: 25px;
+    margin-bottom: 10px; /* Reduced margin for social links */
 }
+
 .footer-section .social-links a {
-	display: inline-table;
-	text-align: center;
-	height: 35px;
-	width: 35px;
-	color: #fff;
-	margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+    height: 40px; /* Increased height for better visibility */
+    width: 40px; /* Increased width for better visibility */
+    line-height: 40px; /* Vertical centering */
+    color: #fff;
+    font-size: 18px; /* Icon size adjustment */
+    margin: 0 8px; /* Increased margin for spacing */
+    border-radius: 50%; /* Rounded shape for icons */
 }
+
 .footer-section .social-links a i {
-	display: table-cell;
-	vertical-align: middle;
+    vertical-align: middle; /* Center icon vertically */
 }
+
 .footer-section .social-links a.facebook {
-	background: #2D5DA1;
+    background-color: #2D5DA1; /* Facebook color */
 }
+
 .footer-section .social-links a.twitter {
-	background: #1AB1E5;
+    background-color: #1AB1E5; /* Twitter color */
 }
+
 .footer-section .social-links a.behance {
-	background: #2A71F3;
+    background-color: #2A71F3; /* Behance color */
 }
+
 .footer-section .social-links a.dribbble {
-	background: #DF7EA5;
+    background-color: #DF7EA5; /* Dribbble color */
 }
+
 .footer-section p {
-	font-size: 14px;
-	margin-bottom: 0;
-	line-height: normal;
+    font-size: 14px;
+    color: #fff; /* Text color */
+    margin: 10px 0 0; /* Margin adjustment */
+    line-height: 1.5; /* Line height adjustment */
 }
+
 
 
 

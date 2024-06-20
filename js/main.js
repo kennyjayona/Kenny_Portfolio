@@ -149,7 +149,7 @@ function downloadResume() {
 			form = $(this),
 			formdata = $(this).serialize(),
 			chack = $('#form-chack');
-			send_btn.text('Wait...');
+			send_btn.text('Successfully Sent!');
 
 		function reset_form(){
 		 	$("#name").val('');
@@ -185,5 +185,52 @@ function downloadResume() {
 		return false;
 	});
 
+	window.addEventListener('scroll', function() {
+    var footer = document.getElementById('footer');
+    var scrollPosition = window.scrollY;
+    var windowHeight = window.innerHeight;
+    var bodyHeight = document.body.offsetHeight;
+
+    // Adjust the offset (200) to control when the footer appears
+    if (scrollPosition + windowHeight >= bodyHeight - 200) {
+        footer.classList.add('show');
+    } else {
+        footer.classList.remove('show');
+    }
+});
+
 
 })(jQuery);
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    var from = document.getElementById('from').value;
+    var subject = document.getElementById('subject').value;
+    var body = document.getElementById('body').value;
+
+    if (from.trim() === '' || subject.trim() === '' || body.trim() === '') {
+        alert('Please fill out all required fields.');
+        event.preventDefault();
+    } else if (!validateEmail(from)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    }
+});
+
+function validateEmail(email) {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Display an alert based on the status in the URL
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+
+    if (status === 'success') {
+        alert('Message sent successfully.');
+    } else if (status === 'error') {
+        alert('Failed to send message. Please try again.');
+    } else if (status === 'invalid-email') {
+        alert('Invalid email address. Please check your input.');
+    }
+});
